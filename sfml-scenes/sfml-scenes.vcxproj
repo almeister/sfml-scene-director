@@ -19,23 +19,24 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\source\LevelOneScene.h" />
+    <ClInclude Include="..\source\Scene.h" />
+    <ClInclude Include="..\source\SceneDirector.h" />
+    <ClInclude Include="..\source\TitleScene.h" />
+  </ItemGroup>
+  <ItemGroup>
     <ClCompile Include="..\source\LevelOneScene.cpp" />
     <ClCompile Include="..\source\Scene.cpp" />
     <ClCompile Include="..\source\SceneDirector.cpp" />
     <ClCompile Include="..\source\SceneExample.cpp" />
     <ClCompile Include="..\source\TitleScene.cpp" />
   </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\source\LevelOneScene.h" />
-    <ClInclude Include="..\source\Scene.h" />
-    <ClInclude Include="..\source\SceneDirector.h" />
-    <ClInclude Include="..\source\TitleScene.h" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{B378094E-3D82-423A-9759-E63855366B70}</ProjectGuid>
     <RootNamespace>sfmlscenes</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <ProjectName>sfml-scene-director</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -84,9 +85,13 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IncludePath>C:\Users\Alex\git\sfml-scenes\source;$(IncludePath)</IncludePath>
+    <ReferencePath>$(ReferencePath)</ReferencePath>
+    <SourcePath>$(SourcePath)</SourcePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>C:\Users\Alex\git\sfml-scenes\source;$(IncludePath)</IncludePath>
+    <ReferencePath>$(ReferencePath)</ReferencePath>
+    <SourcePath>$(SourcePath)</SourcePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
