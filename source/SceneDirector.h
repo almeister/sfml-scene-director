@@ -12,6 +12,7 @@ class SceneDirector
 public:
 	SceneDirector(sf::RenderWindow&);
 
+	void HandleInput(sf::Event&);
 	void Update();
 	void Render();
 

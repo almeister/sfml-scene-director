@@ -6,11 +6,27 @@
 SceneDirector::SceneDirector(sf::RenderWindow& window)
 	: mWindow(window)
 {
-	mScenes.emplace("title", new TitleScene(window));
+	mScenes.emplace("title", new TitleScene(*this, window));
 	mScenes.emplace("level-1", new LevelOneScene(window));
 	LoadTitle();
 
 	mLastFrameTime = system_clock::now();
+}
+
+void SceneDirector::HandleInput(sf::Event& event)
+{
+	if (event.type == sf::Event::KeyPressed)
+	{
+		if (event.key.code == sf::Keyboard::Escape)
+		{
+			mWindow.close();
+
+			return;
+		}
+
+		if (mCurrentScene)
+			mCurrentScene->OnKeyPressed(event.key.code);
+	}
 }
 
 void SceneDirector::Update()

@@ -17,18 +17,7 @@ int main()
 			if (event.type == sf::Event::Closed)
 				window.close();
 
-			if (event.type == sf::Event::KeyPressed)
-			{
-				switch (event.key.code)
-				{
-				case sf::Keyboard::Escape:
-					window.close();
-				case sf::Keyboard::Space:
-					sceneDirector.LoadLevelOne();
-				default:
-					break;
-				}
-			}
+			sceneDirector.HandleInput(event);
 		}
 
 		sceneDirector.Update();

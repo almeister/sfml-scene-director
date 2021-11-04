@@ -2,8 +2,9 @@
 #include <SFML/Graphics/CircleShape.hpp>
 
 
-TitleScene::TitleScene(sf::RenderWindow& renderWindow)
-	: mRenderWindow(renderWindow)
+TitleScene::TitleScene(SceneDirector& sceneDirector, sf::RenderWindow& renderWindow)
+	: mSceneDirector(sceneDirector)
+	, mRenderWindow(renderWindow)
 {
 	mBackgroundTexture = std::make_unique<sf::Texture>();
 	mBackgroundTexture->loadFromFile("assets/boom.png");
@@ -21,4 +22,15 @@ void TitleScene::Update(double deltaT)
 void TitleScene::Render()
 {
 	mRenderWindow.draw(*mBackgroundImage);
+}
+
+void TitleScene::OnKeyPressed(sf::Keyboard::Key key)
+{
+	switch (key)
+	{
+	case sf::Keyboard::Space:
+		mSceneDirector.LoadLevelOne();
+	default:
+		break;
+	}
 }

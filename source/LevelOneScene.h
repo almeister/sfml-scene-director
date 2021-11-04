@@ -18,4 +18,7 @@ private:
 	sf::RenderWindow& mRenderWindow;
 	std::unique_ptr<sf::Texture> mBackgroundTexture;
 	std::unique_ptr<sf::Sprite> mBackgroundImage;
+
+	std::vector<sf::Texture> mCardTextures;
+	std::vector<sf::Sprite> mCardSprites;
 };
